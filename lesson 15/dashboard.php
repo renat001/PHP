@@ -137,7 +137,7 @@ $users_data = $selectUsers->fetch();
  </div>
 
 
-   include("footer.php"); 
+  <?php include("footer.php"); ?>
 ?>
 
 			

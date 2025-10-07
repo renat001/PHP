@@ -10,7 +10,7 @@ $getUsers=$conn->prepare($sql);
 $getUsers->bindParam(':id',$id);
 
 $getUsers->execute();
-header('Location:dashboard.php')
+header('Location:productDashboard.php')
 
 
 ?>
