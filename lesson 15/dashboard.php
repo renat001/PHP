@@ -88,6 +88,7 @@ $users_data = $selectUsers->fetch();
 		<?php 
 
 
+      
         include_once('config.php');
 
 
@@ -115,7 +116,7 @@ $users_data = $selectUsers->fetch();
             </tr>
           </thead>
 
-            foreach ($users as $user ) {
+            foreach ($users as $user ) 
 				<tbody>
             <tr> 
               <td> <?= $user['id'] ?> </td>
@@ -125,7 +126,7 @@ $users_data = $selectUsers->fetch();
               <td> <?= $user['email']  ?> </td>
               <td> <?= "<a href='delete.php?id=$user[id]'> Delete</a>| <a href='profile.php?id=$user[id]'> Update </a>"?></td>
             </tr>
-            }
+      
 
             
             

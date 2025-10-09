@@ -31,16 +31,27 @@
             $sql = "insert into products (title, description, quantity,pice) values (:title, :description, :quantity, :price)";
             $insertSql = $conn->prepare($sql);
 
-            
+            $insertSql->bindParam(':title', $title);
+            $insertSql->bindParam(':description', $description);
+            $insertSql->bindParam(':quantity', $quantity);
+            $newprice=$price*100;
+            $insertSql->bindParam(':price', $newprice);
+
+            $insertSql->execute();
+
+            echo "Data saved successfully ...";
+            header("refresh:2; url=productDashboard.php");
         }
     }
- }
+}
+
+        
 
 
 
 
+            
+        
+    
+ 
 
-
-
-
-?>

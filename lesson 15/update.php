@@ -1,27 +1,34 @@
 <?php
 
-include_once('config.php');
+ include_once('config.php');
 
-if(isset($_POST['update']))
-{
+   if(isset($_POST['update']))
+  {
 	$id = $_POST['id'];
-	$username = $_POST['username'];
-	$name = $_POST['name'];
-	$surname = $_POST['surname'];
-	$email = $_POST['email'];
-
-	$sql = "UPDATE users SET username=:username, name=:name, surname=:surname, email=:email WHERE id=:id";
-	$prep = $conn->prepare($sql);
-	$prep->bindParam(':id', $id);
-	$prep->bindParam(':username', $username);
-	$prep->bindParam(':name', $name);
-	$prep->bindParam(':surname', $surname);
-	$prep->bindParam(':email', $email);
-
-	$prep->execute();
-
-	header("Location:dashboard.php");
-}
+	$username = $_POST['title'];
+	$name = $_POST['description'];
+	$surname = $_POST['quantity'];
+	$email = $_POST['price'];
+	if(empty($title) || empty($description) || empty($quantity) || empty($price))
+	{
+		echo "You need to fill all the fields.";
+		header("refresh:2; url=product.php");
+	}
+	else
+	{
+	   $sql = "UPDATE products SET  title=:title, description=:description, quantity=:quantity, price=:price, WHERE id=:id";
+	   
+	   $updateSql = $conn->prepare($sql);
 
 
+	   $updateSql->bindParam(':id', $id);
+	   $updateSql->bindParam(':title', $title);
+	   $updateSql->bindParam(':description', $description);
+	   $updateSql->bindParam(':quantity', $quantity);
+	   $updateSql->bindParam(':price', $price);
+	
+
+	   header("Location:productDashboard.php");
+	}
+  }
 ?>
