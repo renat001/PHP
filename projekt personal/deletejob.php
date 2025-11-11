@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style.css">
 <?php
 session_start();
 if ($_SESSION['role'] != 'admin') die("Access denied!");

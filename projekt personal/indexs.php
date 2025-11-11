@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="css/style.css">
 <?php
 session_start();
 include 'db.php';
@@ -15,4 +16,3 @@ $result = mysqli_query($conn, "SELECT * FROM jobs");
 <?php if (isset($_SESSION['role']) && $_SESSION['role'] == 'admin') { ?>
   <a href="admin.php">Dashboard</a>
 <?php } ?>
-<a href="logout.php">Logout</a>

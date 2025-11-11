@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="css/style.css">
 <?php
 session_start();
 ini_set('display_errors', 1);
