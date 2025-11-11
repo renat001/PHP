@@ -9,7 +9,7 @@ $result = mysqli_query($conn, "SELECT * FROM jobs");
 <h2>Admin Dashboard</h2>
 <a href="add_job.php">Add New Job</a>
   <tr><th>ID</th><th>Title</th><th>Description</th><th>Actions</th></tr>
-  <?php while ($job = mysqli_fetch_assoc($result)) { ?>
+  <?php while ($job = mysqli_fetch_assoc($result))  ?>
     <tr>
       <td><?php echo $job['id']; ?></td>
       <td><?php echo $job['title']; ?></td>
